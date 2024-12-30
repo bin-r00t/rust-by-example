@@ -6,14 +6,14 @@ impl fmt::Display for List {
 
     fn fmt(&self, f:&mut fmt::Formatter) -> fmt::Result {
         let vec = &self.0;
-        write!(f, "[")?;
+        write!(f, "[")?; // Notice: ? mark
 
         for (count, v) in vec.iter().enumerate() {
-            if count !=0 { write!(f, ",")?; }
-            write!(f, "{}", v)?;
+            if count !=0 { write!(f, ", ")?; } // Notice: ? mark
+            write!(f, "{count}: {value}", count=count, value=v)?; // Notice: ? mark
         }
 
-        write!(f, "]")
+        write!(f, "]") // Notice: NO ? mark...
     }
 }
 
